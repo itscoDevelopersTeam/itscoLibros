@@ -6,7 +6,12 @@
 </head>
 <body>
 <center>
-<form action="agregarAutor.php" method="GET">
+<nav>
+<a href="../acciones/regAutor.php"> Registros </a>
+<a href="frmAutor.php"> Añadir </a>
+</nav>
+<br>
+<form action="../acciones/agregarAutor.php" method="GET">
 	<table border="2">
 		<tr>
 			<td> Ingresa nombre: </td>
@@ -17,6 +22,13 @@
 		</tr>
 	</table>
 </form>
+<?php
+	if(isset($_GET['mensaje']))
+	{
+		$message = $_GET['mensaje'];
+		echo "<h1> $message </h1>";
+	}
+?>
 </center>
 </body>
 </html>

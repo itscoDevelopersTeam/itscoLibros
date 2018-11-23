@@ -4,7 +4,6 @@
 	<title> Carreras</title>
 </head>
 <body>
-<h1> Hola </h1>
 <center>
 <form>
 	<table>
