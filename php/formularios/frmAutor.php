@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 </head>
 <body>
+<h1> HOLA MUNDO </h1>
 <center>
 <form action="agregarAutor.php" method="GET">
 	<table border="2">
