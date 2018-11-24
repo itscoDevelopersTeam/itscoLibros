@@ -5,21 +5,33 @@
 </head>
 <body>
 <center>
-<form>
+<nav>
+	<a href="frmCarrera.php"> Añadir </a>
+	<a href="../acciones/regCarrera.php"> Registros </a>
+</nav>
+<form method="GET" action="../acciones/agregarCarrera.php">
 	<table>
 		<tr>
-		<td> Ingresa id de la carrera </td>
-		<td> <input type="text" name="txtidEditorial"></td>
+		<td> Ingresa clave de la carrera </td>
+		<td> <input type="text" name="txtclaveCarrera"></td>
 		</tr>
 		<tr>
 			<td> Ingresa nombre: </td>
-			<td> <input type="text" name="txtnameEditorial"></td>
+			<td> <input type="text" name="txtnameCarrera"></td>
 		</tr>
 		<tr>
 			<td> <input type="Submit" value="Agregar"></td>
 		</tr>
 	</table>
 </form>
+<a href="../Paneles/usuarioAdmin.php"> Volver a Pagina Principal </a>
+<?php
+if(isset($_GET['mensaje']))
+{
+	$message = $_GET['mensaje'];
+	echo "<h1> $message </h1>";
+}
+?>
 </center>
 </body>
 </html>

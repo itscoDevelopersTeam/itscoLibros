@@ -22,6 +22,7 @@
 		</tr>
 	</table>
 </form>
+<a href="../Paneles/usuarioAdmin.php"> Volver a Pagina Principal </a>
 <?php
 	if(isset($_GET['mensaje']))
 	{

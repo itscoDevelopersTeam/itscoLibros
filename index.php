@@ -17,7 +17,7 @@
 					<td> <input type="password" name="txtcontra"></td>
 				</tr>
 				<tr>
-					<td> <input type="Submit" value="Ingresar"></td>
+					<td> <a href="php/Paneles/usuarioAdmin.php"> Ingresar </a></td>
 				</tr>
 			</table>
 		</form>
