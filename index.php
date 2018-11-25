@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<title>Itsco libros</title>
+		<link rel="stylesheet" type="text/css" href="css/estiloLogin.css" />
 	</head>
-	<body>
-		<center>
-		<form>
-			<table>
-				<tr>
-				<td> Usuario </td>
-				<td> <input type="text" name="txtuser"></td>
-				</tr>
-				<tr>
-					<td> Contraseña</td>
-					<td> <input type="password" name="txtcontra"></td>
-				</tr>
-				<tr>
-					<td> <a href="php/Paneles/usuarioAdmin.php"> Ingresar </a></td>
-				</tr>
-			</table>
-		</form>
-		</center>
-	</body>
+<body id="loginForm">
+<center>
+	
+	<form id ="formMain">
+	<div><h3> Ingresa tus datos </h3></div>
+		<div><input type="text" name="txtcorreo" class="cajas" placeholder="ingresa correo"></div>
+		<br><br>
+		<div><input type="password" name="txtcontraseña" class="cajas" placeholder="ingresa password"></div>
+		<br>
+		<div><a href= "php/Paneles/usuarioAdmin.php" id="botonEntrar"> Entrar </a></div>
+	</form>
+</center>
+</body>
 </html>
