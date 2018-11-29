@@ -1,25 +1,28 @@
 <?php 
-include("../connection.php");
+include("connection.php");
 
-class Editorial {
+class CrudEditorial {
+	private $myConnection;
+
+	function __construct() { $this->myConnection = DataBase::conectar(); }
 
 	function insert($editorial) {
-		$strInsert = "INSERT INTO EDITORIALES VALUES(:nombre)";
-		$insert = $connection->prepare($strInsert);
+		$strInsert = "INSERT INTO EDITORIALES (NOMBRE) VALUES(:nombre)";
+		$insert = $this->myConnection->prepare($strInsert);
 		$insert->bindValue('nombre', $editorial->get_nombre());
 		$insert->execute();
 	}
 
 	function delete($idEditorial) {
 		$strDelete = "DELETE FROM EDITORIALES WHERE ID_EDITORIAL = :id_editorial";
-		$delete = $connection->prepare($strDelete);
+		$delete = $this->myConnection->prepare($strDelete);
 		$delete->bindValue('id_editorial', $idEditorial);
 		$delete->execute();
 	}
 
 	function select($idEditorial) {
 		$strSelect = "SELECT * FROM EDITORIALES WHERE ID_EDITORIAL = :id_editorial";
-		$select = $connection->prepare($strSelect);
+		$select = $this->myConnection->prepare($strSelect);
 		$select->bindValue("id_editorial", $idEditorial);
 		$select->execute();
 
@@ -32,7 +35,7 @@ class Editorial {
 
 	function select_all(){
 		$strSelectAll = "SELECT * FROM EDITORIALES";
-		$selectAll= $connection->query($strSelectAll);
+		$selectAll= $this->myConnection->query($strSelectAll);
 		$listaEditoriales = [];
 
 		foreach($selectAll->fetchAll() as $result){
