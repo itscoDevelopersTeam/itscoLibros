@@ -11,11 +11,11 @@
 <a href="frmAutor.php"> Añadir </a>
 </nav>
 <br>
-<form action="../acciones/agregarAutor.php" method="GET">
+<form action="../form-handlers/add-autor-handler.php" method="GET">
 	<table border="2">
 		<tr>
 			<td> Ingresa nombre: </td>
-			<td> <input type="text" name="txtnameAutor"></td>
+			<td> <input type="text" name="txtNombreAutor"></td>
 		</tr>
 		<tr>
 			<td> <input type="Submit" value="Agregar"></td>
@@ -23,13 +23,6 @@
 	</table>
 </form>
 <a href="../Paneles/usuarioAdmin.php"> Volver a Pagina Principal </a>
-<?php
-	if(isset($_GET['mensaje']))
-	{
-		$message = $_GET['mensaje'];
-		echo "<h1> $message </h1>";
-	}
-?>
 </center>
 </body>
 </html>

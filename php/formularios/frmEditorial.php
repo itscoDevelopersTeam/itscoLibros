@@ -10,10 +10,10 @@
 	<a href="frmEditorial.php"> Añadir </a>
 	<a href="../acciones/regEditorial.php"> Registros </a>
 </nav>
-<form method="GET" action="../acciones/agregarEditorial.php">
+<form method="GET" action="../form-handlers/add-editorial-handler.php">
 	<table>
 			<td> Ingresa nombre: </td>
-			<td> <input type="text" name="txtnameEditorial"></td>
+			<td> <input type="text" name="txtNombreEditorial"></td>
 		</tr>
 		<tr>
 			<td> <input type="Submit" value="Agregar"></td>

@@ -9,15 +9,15 @@
 	<a href="frmCarrera.php"> Añadir </a>
 	<a href="../acciones/regCarrera.php"> Registros </a>
 </nav>
-<form method="GET" action="../acciones/agregarCarrera.php">
+<form method="GET" action="../form-handlers/add-carrera-handler.php">
 	<table>
 		<tr>
-		<td> Ingresa clave de la carrera </td>
-		<td> <input type="text" name="txtclaveCarrera"></td>
+			<td> Ingresa clave de la carrera </td>
+			<td> <input type="text" name="txtIdCarrera"></td>
 		</tr>
 		<tr>
 			<td> Ingresa nombre: </td>
-			<td> <input type="text" name="txtnameCarrera"></td>
+			<td> <input type="text" name="txtNombreCarrera"></td>
 		</tr>
 		<tr>
 			<td> <input type="Submit" value="Agregar"></td>
