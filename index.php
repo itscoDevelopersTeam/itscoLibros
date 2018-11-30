@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<form>
+		<form method="post" action="login.php">
 			<div class="form-row login-header">
 				<i class="fas fa-graduation-cap fa-3x"></i>
 				<h4>itscoLibros</h4>
@@ -17,11 +17,11 @@
 
 			<!-- Campos de datos -->
 			<div class="form-row">
-				<input type="text" id="txtUsuario" placeholder="Nombre usuario">
+				<input type="text" name="txtUser" placeholder="Nombre usuario">
 			</div>
 
 			<div class="form-row">
-				<input type="password" id="txtPassword" placeholder="Contraseña">
+				<input type="password" name="txtPassword" placeholder="Contraseña">
 			</div>
 
 			<div class="form-row">
