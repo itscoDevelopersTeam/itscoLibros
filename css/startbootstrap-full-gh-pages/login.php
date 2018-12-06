@@ -13,7 +13,7 @@
 		<br><br>
 		<div><input type="password" name="txtcontraseña" class="cajas" placeholder="ingresa password"></div>
 		<br>
-		<div><a href= "php/Paneles/usuarioAdmin.php" id="botonEntrar"> Entrar </a></div>
+		<div><a href= "index.html" id="botonEntrar"> Entrar </a></div>
 	</form>
 </center>
 </body>

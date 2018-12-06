@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Registros de carreras </title>
+	<title></title>
 </head>
 <body>
 <center>
@@ -9,24 +9,23 @@
 <a href="regAutor.php"> Registros </a>
 <a href="../formularios/frmAutor.php"> Añadir </a>
 </nav>
-<h1> Registros de Carreras </h1>
+<h1> Registros de Autores </h1>
  <?php
           include("../conexionGeneral.php");
-          $query="Select * From carreras";
+          $query="Select * From autores";
           $link=mysqli_query($conexion,$query);
           echo ("<table border=1 align=center>");
-          echo ("<tr><td>Clave</td><td>Nombre</td><td>acciones</td></tr>");
+          echo ("<tr><td>Id</td><td>Nombre</td><td>acciones</td></tr>");
           while ($reg= mysqli_fetch_array($link))
           {
             echo "<tr>";
-            echo ("<td>$reg[clave]</td>");
+            echo ("<td>$reg[id]</td>");
             echo ("<td>$reg[nombre]</td>");
-            echo ("<td><a href=../acciones/eliminarCarrera.php?clave=$reg[clave]>Eliminar</a>---");
-            echo ("<a href=../acciones/updCarrera.php?nombre=$reg[nombre]>Editar</a></td>");
+            echo ("<td><a href=../acciones/eliminarAutor.php?clave=$reg[id]>Eliminar</a>---");
+            echo ("<a href=editcarrera.php?clave=$reg[nombre]>Editar</a></td>");
             echo ("</tr>");
           }
           ?>
-          
           </center>
 </body>
 </html>
