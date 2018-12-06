@@ -12,5 +12,5 @@ else
 {
    $msg="Error al almacenar";
 }
-header("location: http://localhost:8080/itscoLibros/php/formularios/frmEditorial.php?mensaje=$msg");
+header("location: http://localhost:8080/itscoLibros-production/php/formularios/frmEditorial.php?mensaje=$msg");
 ?>
