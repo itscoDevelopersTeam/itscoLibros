@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<form method="post" action="login.php">
+		<form method="post" action="php/form-handlers/login.php">
 			<div class="form-row login-header">
 				<i class="fas fa-graduation-cap fa-3x"></i>
 				<h4>itscoLibros</h4>
