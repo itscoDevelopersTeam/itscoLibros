@@ -1,12 +1,13 @@
 <?php 
 session_start();
+$username = "";
+
 if($_SESSION) {
-	$nombre = $_SESSION['name'];
-	$email = $_SESSION['email'];
-	echo("<h1>Bienvenido $nombre con el email $email</h1>");
+	$username = $_SESSION['name'];
 }
 else
 	header("Location: ../../index.php?mensaje=Usted no se ha logueado");
+
  ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@ else
 	</head>
 
 	<body>
+		<h1>Bienvenido <?php echo($username); ?></h1>
 		<a href="../../logout.php">Cerrar sesión</a>
 	</body>
 </html>
