@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<title> Carreras</title>
-	 <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	 <link href="../../css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../../css/heroic-features.css" rel="stylesheet">
@@ -41,7 +41,7 @@ if(isset($_GET['mensaje']))
 }
 ?>
 </center>
-<script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../css/jquery/jquery.min.js"></script>
+    <script src="../../css/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

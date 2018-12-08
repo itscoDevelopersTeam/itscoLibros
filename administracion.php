@@ -9,19 +9,13 @@
     <meta name="author" content="">
 
     <title> Panel de Administracion </title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/heroic-features.css" rel="stylesheet">
 
   </head>
 
   <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Biblioteca Digital</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio
+              <a class="nav-link" href="administracion.php">Inicio
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -50,11 +44,9 @@
         </div>
       </div>
     </nav>
-
-    <!-- Page Content -->
+    
     <div class="container">
 
-      <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
        <h1 class="display-3">Bienvenido!</h1>
        <p class="lead">
@@ -62,19 +54,13 @@
        <img src="img/img.jpg"></p>
       </header>
 
-      <!-- Page Features -->
-     
-    <!-- /.container -->
-
-    <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Cristhian Enrique ,Samuel Gomez</p>
       </div>
-      <!-- /.container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

@@ -11,7 +11,7 @@
     <title>Heroic Features - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/heroic-features.css" rel="stylesheet">
@@ -58,7 +58,7 @@
 
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
-            <img class="card-img-top" src="programacion.jpg" alt="">
+            <img class="card-img-top" src="img/programacion.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Ing. Sistemas Computacionales</h4>
               <p class="card-text">Checa todos los libros relacionados a una de las carreras del futuro</p>
@@ -71,7 +71,7 @@
 
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
-            <img class="card-img-top" src="gestion.jpg" alt="">
+            <img class="card-img-top" src="img/gestion.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Ing. Gestion Empresarial </h4>
               <p class="card-text"> Checa todos los libros relacionados a esta gran carrera refenrente a los procesos de administracion de una empresa </p>
@@ -84,7 +84,7 @@
 
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
-            <img class="card-img-top" src="petrolera.jpg" alt="">
+            <img class="card-img-top" src="img/petrolera.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Ingenieria Petrolera</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -97,7 +97,7 @@
 
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
-            <img class="card-img-top" src="industrial.jpg" alt="">
+            <img class="card-img-top" src="img/industrial.jpg" alt="">
             <div class="card-body">
               <h4 class="card-title">Ingenieria Industrial</h4>
               <p class="card-text">Checa los libros relacionados con la carrera de ingenieria industrial </p>
