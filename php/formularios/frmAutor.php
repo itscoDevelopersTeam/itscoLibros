@@ -9,42 +9,16 @@
     <link href="../../css/heroic-features.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Biblioteca Digital</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="../../administracion.html">Inicio
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="frmLibros.php">Libros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="frmAutor.php">Autores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="frmEditorial.php">Editoriales</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="frmCarrera.php">Carreras</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-<br><br><br>
+<?php
+include("menu.php");
+?>
+<br><br>
 <center>
-<form action="../acciones/agregarAutor.php" method="GET">
+<form action="../form-handlers/add-autor-handler.php" method="GET">
 	<table border="2">
 		<tr>
 			<td> Ingresa nombre: </td>
-			<td> <input type="text" name="txtnameAutor"></td>
+			<td> <input type="text" name="txtNombreAutor"></td>
 		</tr>
 		<tr>
 			<td> <input type="Submit" value="Agregar"></td>

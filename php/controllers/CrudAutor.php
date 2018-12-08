@@ -11,8 +11,8 @@ class CrudAutor {
 		$insert = $this->myConnection->prepare($strInsert);
 		$insert->bindValue('nombre', $autor->get_nombre());
 		$insert->execute();
+		
 	}
-
 	function delete($idAutor) {
 		$strDelete = "DELETE FROM AUTORES WHERE ID_AUTOR = :id_autor";
 		$delete = $this->myConnection->prepare($strDelete);
