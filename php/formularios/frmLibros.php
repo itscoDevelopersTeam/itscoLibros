@@ -14,12 +14,7 @@
 include("menu.php");
 ?>
 <br><br><br>
-<footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Cristhian Enrique ,Samuel Gomez</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+
 <script src="../../css/jquery/jquery.min.js"></script>
     <script src="../../css/bootstrap/js/bootstrap.bundle.min.js"></script>
 	</body>

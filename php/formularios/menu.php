@@ -1,3 +1,9 @@
+<style type="text/css">
+.container{
+  background-color: #1ABC9C;
+}
+
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Biblioteca Digital</a>
@@ -7,7 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="../../administracion.html">Inicio
+              <a class="nav-link" href="../../administracion.php">Inicio
                 <span class="sr-only">(current)</span>
               </a>
             </li>
