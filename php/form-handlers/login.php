@@ -11,7 +11,7 @@ $crudUsuario = new CrudUsuario();
 if($resultSet = $crudUsuario->exists($userobj)) {
 	session_start();	//Activa la sesión
 	$_SESSION['name'] = $resultSet['USERNAME'];
-	header("Location: http://localhost/itscoLibros/php/paneles/usuarioNormal.php");
+	header("Location: http://localhost/itscoLibros/php/usuarioAdmin.php");
 }
 else{
 	header("Location: http://localhost/itscoLibros/index.php?mensaje=Sus datos no son válidos");
