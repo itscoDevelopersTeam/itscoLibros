@@ -48,7 +48,7 @@
 </nav>
 <hr>
 <br>
-<!-- Aquí irían los registros... ¡¡si tan solo tuviera uno!! -->
+
 </center>
 
                <script src="../../vendor/jquery/jquery.min.js"></script>

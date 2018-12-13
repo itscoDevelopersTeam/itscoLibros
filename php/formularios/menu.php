@@ -1,5 +1,5 @@
 <style type="text/css">
-.container{
+.navbar{
   background-color: #1ABC9C;
 }
 

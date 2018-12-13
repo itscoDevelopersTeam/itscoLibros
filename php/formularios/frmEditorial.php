@@ -28,6 +28,7 @@ include("menu.php");
 </p>
 <form method="GET" action="../form-handlers/add-editorial-handler.php">
 	<table>
+		<tr>
 			<td> Ingresa nombre: </td>
 			<td> <input type="text" name="txtNombreEditorial"></td>
 		</tr>
