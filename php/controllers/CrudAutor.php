@@ -19,7 +19,6 @@ class CrudAutor {
 		$delete->bindValue('id_autor', $idAutor);
 		$delete->execute();
 	}
-
 	function select($idAutor) {
 		$strSelect = "SELECT * FROM AUTORES WHERE ID_AUTOR = :id_autor";
 		$select = $this->myConnection->prepare($strSelect);

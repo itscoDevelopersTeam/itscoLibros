@@ -7,41 +7,145 @@
 
     <!-- Custom styles for this template -->
     <link href="../../css/heroic-features.css" rel="stylesheet">
+    <?php require_once "../elements/scripts.php"; ?>
 </head>
 <body>
-<?php
-include("menu.php");
-?>
-<br><br><br>
-<center>
-<h3> Registros de Editoriales </h3>
-<hr>
-<nav>
- <a href="../acciones/regEditorial.php" class="btn btn-primary btn-lg">Registros</a>
-<a href="../formularios/frmEditorial.php" class="btn btn-primary btn-lg">Añadir</a>
-</nav>
-<hr>
-<p>
-	Si deseas añadir informacion solo rellena los siguientes datos que se te solicitan
-	y da clic en el boton agregar, en caso de que este correcto el llenado se te notificara
-	inmediatamente si esta correcto o no.
-</p>
-<form method="GET" action="../form-handlers/add-editorial-handler.php">
-	<table>
-		<tr>
-			<td> Ingresa nombre: </td>
-			<td> <input type="text" name="txtNombreEditorial"></td>
-		</tr>
-		<tr>
-			<td> <input type="Submit" value="Agregar"></td>
-		</tr>
-	</table>
-</form>
-<a href="../Paneles/usuarioAdmin.php"> Volver a Pagina Principal </a>
-</center>
+<?php include("menu.php"); ?>
+<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card text-left">
+					<div class="card-header">
+						Nombre de la editorial
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Autores</h5>
+						<span class="btn btn-primary" data-toggle="modal" data-target="#agregarNuevosDatosModal">
+							Agregar nuevo <i class="fas fa-plus-circle"></i>
+						</span>
+						<hr>
+						<div id="tableDataTable"></div>
+					</div>
+					<div class="card-footer text-muted">
+						By Samuel Gómez Balderas & Cristhian Enrique Olivares Lara
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Modal Agregar -->
+	<div class="modal fade" id="agregarNuevosDatosModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Agrega nuevas editoriales</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="frm-nueva-editorial">
+						<label>Nombre</label>
+						<input type="text" class="form-control input-sm" id="nombre" name="txtNombreEditorial">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" id="btnAgregarEditorial" class="btn btn-primary">Agregar nuevo</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-
-<script src="../../css/jquery/jquery.min.js"></script>
-    <script src="../../css/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Modal Actualizar -->
+	<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Actualizar Editorial</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="frm-atualiza-editorial">
+						<input type="text" hidden="" id="idEditorial" name="txt-actualiza-id">
+						<label>Nombre</label>
+						<input type="text" class="form-control input-sm" id="nombreU" name="txt-actualiza-nombre">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-warning" id="btnActualizar">Actualizar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
+<script type="text/javascript">
+	$(document).ready( function() {
+		$('#btnAgregarEditorial').click(function() {
+			datos = $('#frm-nueva-editorial').serialize();
+			$.ajax({
+				type: "GET",
+				data: datos,
+				url: "../form-handlers/add-editorial-handler.php",
+				success: function(r) {
+					if(r !== "")
+						alertify.error("Falló al agregar");
+					else {
+						$('#frm-nueva-editorial')[0].reset();
+						$('#tableDataTable').load('../elements/tabla2.php');
+						alertify.success("Agregado con éxito");
+					}
+				}
+			});
+		});
+		$('#btnActualizar').click(function() {
+			datos = $('#frm-atualiza-editorial').serialize();
+			$.ajax({
+				type: "POST",
+				data: datos,
+				url: "../form-handlers/update-autor-handler.php",
+				success: function(r) {
+					console.log(r);
+					if(r == 1) {
+						$('#frm-atualiza-autor')[0].reset();
+						$('#tableDataTable').load('tabla.php');
+						alertify.success("Actualizado con éxito");
+					}
+					else{
+						alertify.error("Falló al actualizar");
+					}
+				}
+			});
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#tableDataTable').load('../elements/tabla2.php');
+	});
+</script>
+<script type="text/javascript">
+	function eliminarDatos(idEditorial) {
+		alertify.confirm('Eliminar juego', '¿Seguro que lo quieres eliminar :(?', 
+			function(){ 
+				$.ajax({
+					type: "POST",
+					data: "id_editorial=" + idEditorial,
+					url: "../form-handlers/delete-editorial-handler.php",
+					success: function(r) {
+						if(r !== "") 
+							alertify.error("No se pudo eliminar");
+						else {
+							$('#tableDataTable').load('../elements/tabla2.php');
+							alertify.success("Eliminado con éxito");
+						}
+					}
+				});
+			},
+			function(){/*Empty function*/});
+	}
+</script>
