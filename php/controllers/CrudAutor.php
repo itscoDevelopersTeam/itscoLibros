@@ -13,6 +13,12 @@ class CrudAutor {
 		$insert->execute();
 		
 	}
+	function update($idAutor,$name){
+		$strUpdate = "UPDATE AUTORES SET NOMBRE = :name WHERE ID_AUTOR = :idAutor";
+		$update = $this->myConnection->prepare($strUpdate);
+	    $update->bindValue('name',$autor->get_nombre());
+		$update->execute();
+	}
 	function delete($idAutor) {
 		$strDelete = "DELETE FROM AUTORES WHERE ID_AUTOR = :id_autor";
 		$delete = $this->myConnection->prepare($strDelete);

@@ -108,12 +108,12 @@
 		$('#btnActualizar').click(function() {
 			datos = $('#frm-atualiza-autor').serialize();
 			$.ajax({
-				type: "POST",
+				type: "GET",
 				data: datos,
 				url: "../form-handlers/update-autor-handler.php",
 				success: function(r) {
 					console.log(r);
-					if(r == 1) {
+					if(r !== "") {
 						$('#frm-atualiza-autor')[0].reset();
 						$('#tableDataTable').load('tabla.php');
 						alertify.success("Actualizado con éxito");

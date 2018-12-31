@@ -16,5 +16,4 @@ if($resultSet = $crudUsuario->exists($userobj)) {
 else{
 	header("Location: http://localhost/itscoLibros/index.php?mensaje=Sus datos no son válidos");
 }
-
  ?>

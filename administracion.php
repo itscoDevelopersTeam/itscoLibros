@@ -29,16 +29,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="php/formularios/frmLibros.php">Libros</a>
+              <a class="nav-link" href="php/views/frmLibros.php">Libros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="php/formularios/frmAutor.php">Autores</a>
+              <a class="nav-link" href="php/views/frmAutor.php">Autores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="php/formularios/frmEditorial.php">Editoriales</a>
+              <a class="nav-link" href="php/views/frmEditorial.php">Editoriales</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="php/formularios/frmCarrera.php">Carreras</a>
+              <a class="nav-link" href="php/views/frmCarrera.php">Carreras</a>
             </li>
           </ul>
         </div>
