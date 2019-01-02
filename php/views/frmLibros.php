@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
 	<head>
 		<title>Crud Libros</title>
     <meta charset="utf-8">
@@ -34,5 +34,89 @@
       </div>
     </div>
   </div>
+  <!-- Modal Agregar -->
+  <div class="modal fade" id="agregarNuevosDatosModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agrega nuevos libros </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="frm-nuevo-libro">
+            <label>Codigo del libro</label>
+            <input type="text" class="form-control input-sm" id="codigo" name="txt-codigo-libro">
+            <label>Titulo</label>
+            <input type="text" class="form-control input-sm" id="titulo" name="txt-titulo">
+            <label>Numero de Paginas</label>
+            <input type="text" class="form-control input-sm" id="numero_paginas" name="txt-numero-paginas">
+            <label>Stock</label>
+            <input type="text" class="form-control input-sm" id="stock" name="txt-stock">
+            <label>Estado</label>
+            <input type="text" class="form-control input-sm" id="estado" name="txt-estado">
+            <label>Autor</label>
+            <input type="text" class="form-control input-sm" id="autor" name="txt-autor">
+            <label>Editorial</label>
+            <input type="text" class="form-control input-sm" id="editorial" name="txt-editorial">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" id="btnAgregarNuevo" class="btn btn-primary">Agregar nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 	</body>
 </html>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#btnAgregarNuevo').click(function() {
+      datos = $('#frm-nuevo-libro').serialize();
+      $.ajax({
+        type: "GET",
+        data: datos,
+        url: "../form-handlers/add-libro-handler.php",
+        success: function(r) {
+          if(r !== "")
+            alertify.error("Falló al agregar");
+          else {
+            $('#frm-nuevo-libro')[0].reset();
+            $('#tableDataTable').load('../elements/tabla4.php');
+            alertify.success("Agregado con éxito");
+          }
+        }
+      });
+    });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tableDataTable').load('../elements/tabla4.php');
+  });
+</script>
+
+<script type="text/javascript">
+  function eliminarDatos(idLibro) {
+    alertify.confirm('Eliminar juego', '¿Seguro que lo quieres eliminar :(?', 
+      function(){ 
+        $.ajax({
+          type: "POST",
+          data: "id_libro=" + idLibro,
+          url: "../form-handlers/delete-libro-handler.php",
+          success: function(r) {
+            if(r !== "") 
+              alertify.error("No se pudo eliminar");
+            else {
+              $('#tableDataTable').load('../elements/tabla4.php');
+              alertify.success("Eliminado con éxito");
+            }
+          }
+        });
+      },
+      function(){/*Empty function*/});
+  }
+</script>

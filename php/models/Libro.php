@@ -10,7 +10,7 @@ class Libro {
 
 	function set_id_libro($idLibro) { $this->id_libro = $idLibro; }
 	function set_titulo($titulo) { $this->titulo = $titulo; }
-	function set_numereo_paginas($numeroPaginas) { $this->numero_paginas = $numeroPaginas; }
+	function set_numero_paginas($numeroPaginas) { $this->numero_paginas = $numeroPaginas; }
 	function set_stock($stock) { $this->stock = $stock; }
 	function set_estado($estado) { $this->estado = $estado; }
 	function set_id_autor($idAutor) { $this->id_autor = $idAutor; }
