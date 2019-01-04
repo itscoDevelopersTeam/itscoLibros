@@ -19,7 +19,7 @@ class CrudEditorial {
 		$delete->bindValue('id_editorial', $idEditorial);
 		$delete->execute();
 	}
-
+		
 	function select($idEditorial) {
 		$strSelect = "SELECT * FROM EDITORIALES WHERE ID_EDITORIAL = :id_editorial";
 		$select = $this->myConnection->prepare($strSelect);

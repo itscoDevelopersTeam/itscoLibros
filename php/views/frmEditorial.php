@@ -149,3 +149,20 @@
 			function(){/*Empty function*/});
 	}
 </script>
+
+<script type="text/javascript">
+	function agregaFrmActualizar(idEditorial) {
+		console.log(idEditorial);
+		$.ajax({
+			type: "POST",
+			data: "id_editorial=" + idEditorial,
+			url: "../form-handlers/obtener-datos-editorial.php",
+			success: function(r) {
+				console.log(r);
+				datos = jQuery.parseJSON(r);
+				$('#idEditorial').val(datos['id_editorial']);
+				$('#nombreE').val(datos['nombre']);
+			}
+		});
+}
+</script>
