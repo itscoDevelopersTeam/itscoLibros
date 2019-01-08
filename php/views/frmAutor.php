@@ -113,14 +113,9 @@
 				url: "../form-handlers/update-autor-handler.php",
 				success: function(r) {
 					console.log(r);
-					if(r !== "") {
 						$('#frm-atualiza-autor')[0].reset();
-						$('#tableDataTable').load('tabla.php');
-						alertify.success("Actualizado con éxito");
-					}
-					else{
-						alertify.error("Falló al actualizar");
-					}
+						$('#tableDataTable').load('../elements/tabla.php');
+						alertify.success("Actualizado con Exito!!");		
 				}
 			});
 		});
@@ -138,7 +133,7 @@
 	function agregaFrmActualizar(idAutor) {
 		console.log(idAutor);
 		$.ajax({
-			type: "POST",
+			type: "GET",
 			data: "id_autor=" + idAutor,
 			url: "../form-handlers/obtener-datos-autor.php",
 			success: function(r) {

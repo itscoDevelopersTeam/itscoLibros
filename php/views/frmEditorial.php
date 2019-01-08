@@ -19,7 +19,7 @@
 						Nombre de la editorial
 					</div>
 					<div class="card-body">
-						<h5 class="card-title">Autores</h5>
+						<h5 class="card-title">Editoriales</h5>
 						<span class="btn btn-primary" data-toggle="modal" data-target="#agregarNuevosDatosModal">
 							Agregar nuevo <i class="fas fa-plus-circle"></i>
 						</span>
@@ -69,9 +69,9 @@
 				</div>
 				<div class="modal-body">
 					<form id="frm-atualiza-editorial">
-						<input type="text" hidden="" id="idEditorial" name="txt-actualiza-id">
+						<input type="text" hidden = "" id="idEditorial" name="txt-actualiza-id">
 						<label>Nombre</label>
-						<input type="text" class="form-control input-sm" id="nombreU" name="txt-actualiza-nombre">
+						<input type="text" class="form-control input-sm" id="nombreE" name="txt-actualiza-nombre">
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -107,33 +107,48 @@
 			$.ajax({
 				type: "POST",
 				data: datos,
-				url: "../form-handlers/update-autor-handler.php",
+				url: "../form-handlers/update-editorial-handler.php",
 				success: function(r) {
 					console.log(r);
-					if(r == 1) {
-						$('#frm-atualiza-autor')[0].reset();
-						$('#tableDataTable').load('tabla.php');
+					
+						$('#frm-atualiza-editorial')[0].reset();
+						$('#tableDataTable').load('../elements/tabla2.php');
 						alertify.success("Actualizado con éxito");
-					}
-					else{
-						alertify.error("Falló al actualizar");
-					}
+					
+					
 				}
 			});
 		});
 	});
 </script>
+
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('#tableDataTable').load('../elements/tabla2.php');
 	});
 </script>
+
 <script type="text/javascript">
+function agregaFrmActualizarEditorial(idEditorial){
+		console.log(idEditorial);
+		$.ajax({
+			type: "GET",
+			data: "id_editorial="+idEditorial,
+			url: "../form-handlers/obtener-datos-editorial.php",
+			success: function(r) {
+				console.log(r);
+				datos = jQuery.parseJSON(r);
+				$('#idEditorial').val(datos['id_editorial']);
+				$('#nombreE').val(datos['nombre']);
+			}
+		});
+}
 	function eliminarDatos(idEditorial) {
 		alertify.confirm('Eliminar juego', '¿Seguro que lo quieres eliminar :(?', 
 			function(){ 
 				$.ajax({
-					type: "POST",
+					type: "GET",
 					data: "id_editorial=" + idEditorial,
 					url: "../form-handlers/delete-editorial-handler.php",
 					success: function(r) {
@@ -148,21 +163,4 @@
 			},
 			function(){/*Empty function*/});
 	}
-</script>
-
-<script type="text/javascript">
-	function agregaFrmActualizar(idEditorial) {
-		console.log(idEditorial);
-		$.ajax({
-			type: "POST",
-			data: "id_editorial=" + idEditorial,
-			url: "../form-handlers/obtener-datos-editorial.php",
-			success: function(r) {
-				console.log(r);
-				datos = jQuery.parseJSON(r);
-				$('#idEditorial').val(datos['id_editorial']);
-				$('#nombreE').val(datos['nombre']);
-			}
-		});
-}
 </script>

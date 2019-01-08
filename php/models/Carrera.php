@@ -1,7 +1,7 @@
 <?php 
 class Carrera {
-	private $id_carrera;
-	private $nombre;
+	public $id_carrera;
+	public $nombre;
 
 	function set_id_carrera($idCarrera) { $this->id_carrera = $idCarrera; }
 	function set_nombre($nombre) { $this->nombre = $nombre; }
@@ -10,4 +10,4 @@ class Carrera {
 	function get_nombre() { return $this->nombre; }
 }
 
- ?>
+?>

@@ -4,8 +4,7 @@ include("../controllers/CrudAutor.php");
 
 $crudAutor = new CrudAutor();
 $autores = $crudAutor->select_all();
-
- ?>
+?>
 
 <div>
 	<table class="table table-hover table-condensed" id="idDataTable">

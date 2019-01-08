@@ -57,6 +57,30 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modal Actualizar -->
+	<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Actualizar Carrera</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="frm-atualiza-carrera">
+						<input type="text" hidden="" id="idCarrera" name="txt-actualiza-id">
+						<label>Nombre</label>
+						<input type="text" class="form-control input-sm" id="nombreC" name="txt-actualiza-nombre">
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-warning" id="btnActualizar">Actualizar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 <script type="text/javascript">
@@ -104,5 +128,21 @@ function eliminarDatos(idCarrera) {
 				});
 			},
 			function(){/*Empty function*/});
+	}
+</script>
+<script type="text/javascript">
+	function agregaFrmActualizar(idCarrera) {
+		console.log(idCarrera);
+		$.ajax({
+			type: "GET",
+			data: "id_carrera=" + idCarrera,
+			url: "../form-handlers/obtener-datos-carrera.php",
+			success: function(r) {
+				console.log(r);
+				datos = jQuery.parseJSON(r);
+				$('#idCarrera').val(datos['id_autor']);
+				$('#nombreC').val(datos['nombre']);
+			}
+		});
 	}
 </script>

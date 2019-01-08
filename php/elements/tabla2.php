@@ -1,7 +1,6 @@
 <?php 
 include("../models/Editorial.php");
 include("../controllers/CrudEditorial.php");
-
 $crudEditorial = new CrudEditorial();
 $editoriales = $crudEditorial->select_all();
 
@@ -23,7 +22,7 @@ $editoriales = $crudEditorial->select_all();
 				<td><?php echo $editorial->get_id_editorial(); ?></td>
 				<td><?php echo $editorial->get_nombre(); ?></td>
 				<td style="text-align: center;">
-					<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizar('<?php echo $editorial->get_id_editorial(); ?>')">
+					<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizarEditorial('<?php echo $editorial->get_id_editorial(); ?>')">
 						<i class="fas fa-pen-square"></i>
 					</span>
 				</td>

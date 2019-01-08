@@ -2,7 +2,7 @@
 include("connection.php");
 
 class CrudAutor {
-	private $myConnection;
+	public $myConnection;
 
 	function __construct() { $this->myConnection = DataBase::conectar(); }
 
@@ -16,7 +16,8 @@ class CrudAutor {
 	function update($idAutor,$name){
 		$strUpdate = "UPDATE AUTORES SET NOMBRE = :name WHERE ID_AUTOR = :idAutor";
 		$update = $this->myConnection->prepare($strUpdate);
-	    $update->bindValue('name',$autor->get_nombre());
+		$update->bindValue('idAutor',$idAutor);
+	    $update->bindValue('name',$name);
 		$update->execute();
 	}
 	function delete($idAutor) {
@@ -30,7 +31,6 @@ class CrudAutor {
 		$select = $this->myConnection->prepare($strSelect);
 		$select->bindValue("id_autor", $idAutor);
 		$select->execute();
-
 		$result = $select->fetch();
 		$autor = new Autor;
 		$autor->set_id_autor($result['ID_AUTOR']);

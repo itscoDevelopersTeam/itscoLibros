@@ -12,20 +12,26 @@ class CrudEditorial {
 		$insert->bindValue('nombre', $editorial->get_nombre());
 		$insert->execute();
 	}
-
+	function update($idEdit,$name){
+		$strUpdate = "UPDATE EDITORIALES SET NOMBRE = :name WHERE ID_EDITORIAL = :idEdit";
+		$update = $this->myConnection->prepare($strUpdate);
+		$update->bindValue('idEdit',$idEdit);
+	    $update->bindValue('name',$name);
+		$update->execute();
+	}
 	function delete($idEditorial) {
 		$strDelete = "DELETE FROM EDITORIALES WHERE ID_EDITORIAL = :id_editorial";
 		$delete = $this->myConnection->prepare($strDelete);
 		$delete->bindValue('id_editorial', $idEditorial);
 		$delete->execute();
 	}
-		
+
 	function select($idEditorial) {
 		$strSelect = "SELECT * FROM EDITORIALES WHERE ID_EDITORIAL = :id_editorial";
 		$select = $this->myConnection->prepare($strSelect);
 		$select->bindValue("id_editorial", $idEditorial);
 		$select->execute();
-
+		
 		$result = $select->fetch();
 		$editorial = new Editorial;
 		$editorial->set_id_editorial($result['ID_EDITORIAL']);
@@ -48,4 +54,4 @@ class CrudEditorial {
 	}
 }
 
- ?>
+?>

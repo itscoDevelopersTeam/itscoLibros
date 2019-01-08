@@ -1,7 +1,7 @@
 <?php 
 class Editorial {
-	private $id_editorial;
-	private $nombre;
+	public $id_editorial;
+	public $nombre;
 
 	function set_id_editorial($idEditorial) { $this->id_editorial = $idEditorial; }
 	function set_nombre($nombre) { $this->nombre = $nombre; }
