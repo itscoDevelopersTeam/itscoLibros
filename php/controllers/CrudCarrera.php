@@ -13,7 +13,13 @@ class CrudCarrera {
 		$insert->bindValue('nombre', $carrera->get_nombre());
 		$insert->execute();
 	}
-
+	function update($idCarr,$name){
+		$strUpdate = "UPDATE CARRERAS SET NOMBRE = :name WHERE ID_CARRERA = :idCarr";
+		$update = $this->myConnection->prepare($strUpdate);
+		$update->bindValue('idCarr',$idCarr);
+	    $update->bindValue('name',$name);
+		$update->execute();
+	}
 	function delete($idCarrera) {
 		$strDelete = "DELETE FROM CARRERAS WHERE ID_CARRERA = :id_carrera";
 		$delete = $this->myConnection->prepare($strDelete);

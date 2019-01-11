@@ -13,7 +13,6 @@ $libros = $crudLibro->select_all();
 				<td> Titulo </td>				
 				<td> Numero Paginas </td>			
 				<td> stock </td>
-				<td> Estado </td>
 				<td> Autor </td>
 				<td> editorial </td>
 				<td> Editar </td>
@@ -27,11 +26,10 @@ $libros = $crudLibro->select_all();
 				<td><?php echo $libro->get_titulo(); ?></td>
 				<td><?php echo $libro->get_numero_paginas(); ?></td>
 				<td><?php echo $libro->get_stock(); ?></td>
-				<td><?php echo $libro->get_estado(); ?></td>
 				<td><?php echo $libro->get_id_autor(); ?></td>
 				<td><?php echo $libro->get_id_editorial(); ?></td>
 				<td style="text-align: center;">
-					<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizar('<?php echo $libro->get_id_libro(); ?>')">
+					<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizarLibro('<?php echo $libro->get_id_libro(); ?>')">
 						<i class="fas fa-pen-square"></i>
 					</span>
 				</td>
@@ -49,7 +47,6 @@ $libros = $crudLibro->select_all();
 				<td> Titulo </td>				
 				<td> Numero Paginas </td>			
 				<td> stock </td>
-				<td> Estado </td>
 				<td> Autor </td>
 				<td> editorial </td>
 				<td> Editar </td>

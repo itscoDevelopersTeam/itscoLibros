@@ -104,7 +104,6 @@
 				}
 			});
 		});
-
 		$('#btnActualizar').click(function() {
 			datos = $('#frm-atualiza-autor').serialize();
 			$.ajax({
@@ -112,10 +111,9 @@
 				data: datos,
 				url: "../form-handlers/update-autor-handler.php",
 				success: function(r) {
-					console.log(r);
 						$('#frm-atualiza-autor')[0].reset();
 						$('#tableDataTable').load('../elements/tabla.php');
-						alertify.success("Actualizado con Exito!!");		
+						alertify.success("Actualizado con Exito!!");	
 				}
 			});
 		});

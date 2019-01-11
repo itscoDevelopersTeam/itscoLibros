@@ -51,11 +51,9 @@
             <label>Titulo</label>
             <input type="text" class="form-control input-sm" id="titulo" name="txt-titulo">
             <label>Numero de Paginas</label>
-            <input type="text" class="form-control input-sm" id="numero_paginas" name="txt-numero-paginas">
+            <input type="number" class="form-control input-sm" id="numero_paginas" name="txt-numero-paginas">
             <label>Stock</label>
-            <input type="text" class="form-control input-sm" id="stock" name="txt-stock">
-            <label>Estado</label>
-            <input type="text" class="form-control input-sm" id="estado" name="txt-estado">
+            <input type="number" class="form-control input-sm" id="stock" name="txt-stock">
             <label>Autor</label>
             <input type="text" class="form-control input-sm" id="autor" name="txt-autor">
             <label>Editorial</label>
@@ -65,6 +63,38 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           <button type="button" id="btnAgregarNuevo" class="btn btn-primary">Agregar nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Actualizar -->
+  <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Actualizar libro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="frm-atualiza-libro">
+            <input type="text" hidden="" id="idLibro" name="txt-actualiza-id">
+            <label>Titulo</label>
+            <input type="text" class="form-control input-sm" id="tituloLibro" name="txt-actualiza-titulo">
+            <label>Numero de paginas</label>
+            <input type="number" class="form-control input-sm" id="paginasLibro" name="txt-actualiza-paginas">
+            <label>Stock</label>
+            <input type="number" class="form-control input-sm" id="stockLibro" name="txt-actualiza-stock">
+            <label>Autor</label>
+            <input type="text" class="form-control input-sm" id="autorLibro" name="txt-actualiza-autor">
+            <label>Editorial</label>
+            <input type="text" class="form-control input-sm" id="editorialLibro" name="txt-actualiza-editorial">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-warning" id="btnActualizar">Actualizar</button>
         </div>
       </div>
     </div>
@@ -119,4 +149,39 @@
       },
       function(){/*Empty function*/});
   }
+</script>
+<script type="text/javascript">
+  function agregaFrmActualizarLibro(idLibro) {
+    console.log(idLibro);
+    $.ajax({
+      type: "GET",
+      data: "id_libro=" + idLibro,
+      url: "../form-handlers/obtener-datos-libro.php",
+      success: function(r) {
+        console.log(r);
+        datos = jQuery.parseJSON(r);
+        $('#idLibro').val(datos['idlibro']);
+        $('#tituloLibro').val(datos['titulo']);
+        $('#paginasLibro').val(datos['numero_paginas']);
+        $('#stockLibro').val(datos['stock']);
+        $('#autorLibro').val(datos['id_autor']);
+        $('#editorialLibro').val(datos['id_editorial']);
+      }
+    });
+  }
+</script>
+<script type="text/javascript">
+$('#btnActualizar').click(function() {
+      datos = $('#frm-atualiza-libro').serialize();
+      $.ajax({
+        type: "GET",
+        data: datos,
+        url: "../form-handlers/update-libro-handler.php",
+        success: function(r) {
+            $('#frm-atualiza-libro')[0].reset();
+            $('#tableDataTable').load('../elements/tabla4.php');
+            alertify.success("Actualizado con Exito!!");  
+        }
+      });
+    });
 </script>
