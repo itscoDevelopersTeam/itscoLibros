@@ -1,3 +1,8 @@
+<?php
+$mysqli = new mysqli('127.0.0.1', 'root', '', 'biblioteca');
+$mysqli->set_charset("utf8");
+?>
+
 <!DOCTYPE html>
 
 <html lang="es">
@@ -20,7 +25,7 @@
             Nombre del libro
           </div>
           <div class="card-body">
-            <h5 class="card-title">Autores</h5>
+            <h5 class="card-title">Libros</h5>
             <span class="btn btn-primary" data-toggle="modal" data-target="#agregarNuevosDatosModal">
               Agregar nuevo <i class="fas fa-plus-circle"></i>
             </span>
@@ -28,7 +33,7 @@
             <div id="tableDataTable"></div>
           </div>
           <div class="card-footer text-muted">
-            By Samuel Gómez Balderas & Cristhian Enrique Olivares Lara
+            By itscoDevelopersTeam
           </div>
         </div>
       </div>
@@ -55,7 +60,7 @@
             <label>Stock</label>
             <input type="number" class="form-control input-sm" id="stock" name="txt-stock">
             <label>Autor</label>
-            <input type="text" class="form-control input-sm" id="autor" name="txt-autor">
+            <input type="text" class="form-control input-sm" id="stock" name="txt-autor">
             <label>Editorial</label>
             <input type="text" class="form-control input-sm" id="editorial" name="txt-editorial">
           </form>

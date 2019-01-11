@@ -14,9 +14,7 @@ $libros = $crudLibro->select_all();
 				<td> Numero Paginas </td>			
 				<td> stock </td>
 				<td> Autor </td>
-				<td> editorial </td>
-				<td> Editar </td>
-				<td> Eliminar </td>			
+				<td> editorial </td>		
 			</tr>
 		</thead>
 		<tbody>
@@ -28,16 +26,6 @@ $libros = $crudLibro->select_all();
 				<td><?php echo $libro->get_stock(); ?></td>
 				<td><?php echo $libro->get_id_autor(); ?></td>
 				<td><?php echo $libro->get_id_editorial(); ?></td>
-				<td style="text-align: center;">
-					<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizarLibro('<?php echo $libro->get_id_libro(); ?>')">
-						<i class="fas fa-pen-square"></i>
-					</span>
-				</td>
-				<td style="text-align: center;">
-					<span class="btn btn-danger btn-sm" onclick="eliminarDatos('<?php echo $libro->get_id_libro(); ?>')">
-						<i class="fas fa-minus-circle"></i>
-					</span>
-				</td>
 			</tr>
 			<?php } ?>	<!-- Cierre del ciclo que muestra los registros -->
 		</tbody>
@@ -49,8 +37,6 @@ $libros = $crudLibro->select_all();
 				<td> stock </td>
 				<td> Autor </td>
 				<td> editorial </td>
-				<td> Editar </td>
-				<td> Eliminar </td>
 			</tr>
 		</tfoot>
 	</table>

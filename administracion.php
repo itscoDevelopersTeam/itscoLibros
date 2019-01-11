@@ -40,6 +40,9 @@
             <li class="nav-item">
               <a class="nav-link" href="php/views/frmCarrera.php">Carreras</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8080/itscoLibros/index.php"> Salir </a>
+            </li>
           </ul>
         </div>
       </div>

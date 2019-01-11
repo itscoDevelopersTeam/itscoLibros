@@ -9,20 +9,24 @@
 	</head>
 
 	<body>
-		<form method="post" action="php/form-handlers/selectRole.php">
+		<form method="post" action="php/form-handlers/login.php">
 			<div class="form-row login-header">
 				<i class="fas fa-graduation-cap fa-3x"></i>
 				<h4> itscoLibros </h4>
 			</div>
-			<div class="form-row">
-				<input type="submit" value="Alumnos" name = "accion">
-	
-			</div>
-				<div class="form-row">
-				<input type="submit" name ="accion" value="Bibliotecario">
-			</div>	
 
-				
+			<!-- Campos de datos -->
+			<div class="form-row">
+				<input type="text" name="txtUser" placeholder="Nombre usuario">
+			</div>
+
+			<div class="form-row">
+				<input type="password" name="txtPassword" placeholder="Contraseña">
+			</div>
+
+			<div class="form-row">
+				<input type="submit" value="ingresar">
+			</div>
 		</form>
 	</body>
 </html>

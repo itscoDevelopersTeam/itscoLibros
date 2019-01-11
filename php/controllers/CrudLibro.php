@@ -16,7 +16,7 @@ class CrudLibro{
 		
 	}
 	function update($idbook,$tit,$pag,$cant,$aut,$edit){
-		$strUpdate = "UPDATE libros SET titulo = :tit, autor=:aut, editorial=:edit, numero_paginas=:pag AND stock=:cant WHERE clave = :idbook";
+		$strUpdate = "UPDATE libros SET titulo = :tit, autor=:aut, editorial=:edit, numero_paginas=:pag stock=:cant WHERE clave = :idbook";
 		$update = $this->myConnection->prepare($strUpdate);
 		$update->bindValue('idbook',$idbook);
 	    $update->bindValue('tit',$tit);
