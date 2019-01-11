@@ -7,14 +7,14 @@ class CrudAutor {
 	function __construct() { $this->myConnection = DataBase::conectar(); }
 
 	function insert($autor) {
-		$strInsert = "INSERT INTO AUTORES (NOMBRE) VALUES(:nombre)";
+		$strInsert = "INSERT INTO AUTORES (nombredelAutor) VALUES(:nombre)";
 		$insert = $this->myConnection->prepare($strInsert);
 		$insert->bindValue('nombre', $autor->get_nombre());
 		$insert->execute();
 		
 	}
 	function update($idAutor,$name){
-		$strUpdate = "UPDATE AUTORES SET NOMBRE = :name WHERE ID_AUTOR = :idAutor";
+		$strUpdate = "UPDATE AUTORES SET nombredelAutor = :name WHERE ID_AUTOR = :idAutor";
 		$update = $this->myConnection->prepare($strUpdate);
 		$update->bindValue('idAutor',$idAutor);
 	    $update->bindValue('name',$name);
@@ -34,7 +34,7 @@ class CrudAutor {
 		$result = $select->fetch();
 		$autor = new Autor;
 		$autor->set_id_autor($result['ID_AUTOR']);
-		$autor->set_nombre($result['NOMBRE']);
+		$autor->set_nombre($result['nombredelAutor']);
 		return $autor;
 	}
 
@@ -46,7 +46,7 @@ class CrudAutor {
 		foreach($selectAll->fetchAll() as $result){
 			$autor= new Autor;
 			$autor->set_id_autor($result['ID_AUTOR']);
-			$autor->set_nombre($result['NOMBRE']);
+			$autor->set_nombre($result['nombredelAutor']);
 			$listaAutores[]=$autor;
 		}
 		return $listaAutores;

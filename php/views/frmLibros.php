@@ -1,8 +1,8 @@
 <?php
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'biblioteca');
-$mysqli->set_charset("utf8");
+include("enlace.php");
+$query = mysqli_query($mysqli,"SELECT ID_AUTOR,nombredelAutor FROM AUTORES");
+$query2 = mysqli_query($mysqli,"SELECT ID_EDITORIAL,NOMBRE FROM EDITORIALES");
 ?>
-
 <!DOCTYPE html>
 
 <html lang="es">
@@ -59,10 +59,31 @@ $mysqli->set_charset("utf8");
             <input type="number" class="form-control input-sm" id="numero_paginas" name="txt-numero-paginas">
             <label>Stock</label>
             <input type="number" class="form-control input-sm" id="stock" name="txt-stock">
-            <label>Autor</label>
-            <input type="text" class="form-control input-sm" id="stock" name="txt-autor">
+            <label>Selecciona un autor disponible</label>
+            <br>
+            <select name="autoreslista">
+              <?php
+                while($datos = mysqli_fetch_array($query))
+                {
+              ?>
+                  <option value="<?php echo $datos['ID_AUTOR']?>"> <?php echo $datos['nombredelAutor'] ?> </option>
+                  <?php
+                }
+                  ?>
+            </select>
+            <br>
             <label>Editorial</label>
-            <input type="text" class="form-control input-sm" id="editorial" name="txt-editorial">
+            <br>
+            <select name="editorialeslista">
+              <?php
+                while($datos2 = mysqli_fetch_array($query2))
+                {
+              ?>
+                  <option value="<?php echo $datos2['ID_EDITORIAL']?>"> <?php echo $datos2['NOMBRE'] ?> </option>
+                  <?php
+                }
+                  ?>
+            </select>
           </form>
         </div>
         <div class="modal-footer">
@@ -91,8 +112,7 @@ $mysqli->set_charset("utf8");
             <input type="number" class="form-control input-sm" id="paginasLibro" name="txt-actualiza-paginas">
             <label>Stock</label>
             <input type="number" class="form-control input-sm" id="stockLibro" name="txt-actualiza-stock">
-            <label>Autor</label>
-            <input type="text" class="form-control input-sm" id="autorLibro" name="txt-actualiza-autor">
+           
             <label>Editorial</label>
             <input type="text" class="form-control input-sm" id="editorialLibro" name="txt-actualiza-editorial">
           </form>

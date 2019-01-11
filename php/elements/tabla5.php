@@ -1,8 +1,8 @@
 <?php
 include("../models/Libro.php");
-include("../controllers/CrudLibro.php");
+include("../controllers/busqueda.php");
 
-$crudLibro = new CrudLibro();
+$crudLibro = new busqueda();
 $libros = $crudLibro->select_all();
 ?>
 <div>

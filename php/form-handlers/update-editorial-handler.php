@@ -3,7 +3,7 @@ include("../models/Editorial.php");
 include("../controllers/CrudEditorial.php");
 $idEdi = $_POST['txt-actualiza-id'];
 $nomEdi = $_POST['txt-actualiza-nombre'];
-if(preg_match("/^[A-Za-z0-9\s]+$/", $nomEdi)){
+if(preg_match("/^[a-zA-Z\s]+$/", $nomEdi)){
 $crudEditorial = new CrudEditorial();
 $crudEditorial->update($idEdi,$nomEdi);
 }
