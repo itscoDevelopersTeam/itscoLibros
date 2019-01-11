@@ -71,7 +71,7 @@ $query2 = mysqli_query($mysqli,"SELECT ID_EDITORIAL,NOMBRE FROM EDITORIALES");
                 }
                   ?>
             </select>
-            <br>
+            <br><br>
             <label>Editorial</label>
             <br>
             <select name="editorialeslista">

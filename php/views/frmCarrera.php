@@ -102,6 +102,21 @@
 				}
 			});
 		});
+		$('#btnActualizar').click(function() {
+			datos = $('#frm-atualiza-carrera').serialize();
+			$.ajax({
+				type: "GET",
+				data: datos,
+				url: "../form-handlers/update-carrera-handler.php",
+				success: function(r) {
+					console.log(r);
+						$('#frm-atualiza-carrera')[0].reset();
+						$('#tableDataTable').load('../elements/tabla3.php');
+						alertify.success("Actualizado con éxito");
+				}
+			});
+		});
+
 	});
 </script>
 <script type="text/javascript">
@@ -140,9 +155,11 @@ function eliminarDatos(idCarrera) {
 			success: function(r) {
 				console.log(r);
 				datos = jQuery.parseJSON(r);
-				$('#idCarrera').val(datos['id_autor']);
+				$('#idCarrera').val(datos['id_carrera']);
 				$('#nombreC').val(datos['nombre']);
 			}
 		});
 	}
 </script>
+
+	
