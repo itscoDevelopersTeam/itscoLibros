@@ -31,7 +31,7 @@
               <a class="nav-link" href="frmCarrera.php">Carreras</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8080/itscoLibros/index.php"> Salir </a>
+              <a class="nav-link" href="http://localhost:80/itscoLibros/index.php"> Salir </a>
             </li>
           </ul>
         </div>
