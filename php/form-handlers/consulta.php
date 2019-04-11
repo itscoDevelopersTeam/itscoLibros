@@ -17,15 +17,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:8080/itscoLibros/php/usuarioNormal.php">Inicio
+              <a class="nav-link" href="http://localhost:80/itscoLibros/php/usuarioNormal.php">Inicio
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8080/itscoLibros/php/form-handlers/consulta.php"> Consulta </a>
+              <a class="nav-link" href="http://localhost:80/itscoLibros/php/form-handlers/consulta.php"> Consulta </a>
             </li>
           <li class="nav-item">
-              <a class="nav-link" href="http://localhost:8080/itscoLibros/index.php"> Salir </a>
+              <a class="nav-link" href="http://localhost:80/itscoLibros/index.php"> Salir </a>
             </li>
           </ul>
         </div>
