@@ -64,26 +64,10 @@ $query2 = mysqli_query($mysqli, "SELECT ID_EDITORIAL,NOMBRE FROM EDITORIALES");
 						<label>Programa</label>
 						<input type="text" class="form-control input-sm" id="programa" name="txt-programa">
 						<label>Editorial</label>
+						<input type="text" class="form-control input-sm" id="editorial" name="editorialeslista">
 						<br>
-						<select class="form-control" name="editorialeslista">
-							<?php
-							while ($datos2 = mysqli_fetch_array($query2)) {
-								?>
-								<option value="<?php echo $datos2['NOMBRE'] ?>"> <?php echo $datos2['NOMBRE'] ?> </option>
-							<?php
-						}
-						?>
-						</select>
-						<label>Selecciona un autor disponible</label>
-						<select class="form-control" name="autoreslista">
-							<?php
-							while ($datos = mysqli_fetch_array($query)) {
-							?>
-								<option value="<?php echo $datos['nombredelAutor'] ?>"> <?php echo $datos['nombredelAutor'] ?> </option>
-							<?php
-						}
-						?>
-						</select>
+						<label>Autor</label>
+						<input type="text" class="form-control input-sm" id="autor" name="autoreslista">
 						<label>Ubicación</label>
 						<input type="text" class="form-control input-sm" id="ubicacion" name="txt-ubicacion">
 						<label>URL</label>
