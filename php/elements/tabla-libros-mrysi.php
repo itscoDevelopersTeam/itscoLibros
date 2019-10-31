@@ -10,7 +10,6 @@ $libros = $crudLibro->select_mrysi();
 	<table class="table table-hover table-condensed" id="idDataTable">
 		<thead style="background-color: #212158; color: white; font-weight: bold;">	<!-- Separar en otro archivo css -->
 			<tr>
-				<td> Clave </td>				
 				<td> Titulo </td>				
 				<td> Tipo </td>				
 				<td> año </td>		
@@ -24,7 +23,6 @@ $libros = $crudLibro->select_mrysi();
 		<tbody>
 			<?php foreach($libros as $libro) { ?>	<!-- Abre el ciclo que muestra registros -->
 			<tr>
-				<td><?php echo $libro->get_id_libro(); ?></td>
 				<td><?php echo $libro->get_titulo(); ?></td>
 				<td><?php echo $libro->get_tipo(); ?></td>
 				<td><?php echo $libro->get_anio(); ?></td>
