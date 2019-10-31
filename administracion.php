@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Panel de Administracion </title>
+    <title>Panel de Administracion</title>
     <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/heroic-features.css" rel="stylesheet">
 
@@ -53,8 +53,7 @@
       <header class="jumbotron my-4">
        <h1 class="display-3">Bienvenido!</h1>
        <p class="lead">
-       Panel de administracion de la biblioteca digital
-       <img src="img/img.jpg"></p>
+       Panel de administracion de la biblioteca digital LANIA
       </header>
 
     <footer class="py-5 bg-dark">

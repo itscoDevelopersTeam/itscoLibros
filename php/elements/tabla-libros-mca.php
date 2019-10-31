@@ -3,7 +3,7 @@ include("../models/Libro.php");
 include("../controllers/busqueda.php");
 
 $crudLibro = new busqueda();
-$libros = $crudLibro->select_all();
+$libros = $crudLibro->select_mca();
 // echo $libros;
 ?>
 <div>

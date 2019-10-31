@@ -57,31 +57,39 @@ $query2 = mysqli_query($mysqli, "SELECT ID_EDITORIAL,NOMBRE FROM EDITORIALES");
 						<input type="text" class="form-control input-sm" id="codigo" name="txt-codigo-libro">
 						<label>Titulo</label>
 						<input type="text" class="form-control input-sm" id="titulo" name="txt-titulo">
-						<label>Numero de Paginas</label>
-						<input type="number" class="form-control input-sm" id="numero_paginas" name="txt-numero-paginas">
-						<label>Stock</label>
-						<input type="number" class="form-control input-sm" id="stock" name="txt-stock">
-						<label>Selecciona un autor disponible</label>
-						<select class="form-control" name="autoreslista">
-							<?php
-							while ($datos = mysqli_fetch_array($query)) {
-								?>
-								<option value="<?php echo $datos['ID_AUTOR'] ?>"> <?php echo $datos['nombredelAutor'] ?> </option>
-							<?php
-						}
-						?>
-						</select>
+						<label>Tipo</label>
+						<input type="text" class="form-control input-sm" id="tipo" name="txt-tipo">
+						<label>Año</label>
+						<input type="text" class="form-control input-sm" id="anio" name="txt-anio">
+						<label>Programa</label>
+						<input type="text" class="form-control input-sm" id="programa" name="txt-programa">
 						<label>Editorial</label>
 						<br>
 						<select class="form-control" name="editorialeslista">
 							<?php
 							while ($datos2 = mysqli_fetch_array($query2)) {
 								?>
-								<option value="<?php echo $datos2['ID_EDITORIAL'] ?>"> <?php echo $datos2['NOMBRE'] ?> </option>
+								<option value="<?php echo $datos2['NOMBRE'] ?>"> <?php echo $datos2['NOMBRE'] ?> </option>
 							<?php
 						}
 						?>
 						</select>
+						<label>Selecciona un autor disponible</label>
+						<select class="form-control" name="autoreslista">
+							<?php
+							while ($datos = mysqli_fetch_array($query)) {
+							?>
+								<option value="<?php echo $datos['nombredelAutor'] ?>"> <?php echo $datos['nombredelAutor'] ?> </option>
+							<?php
+						}
+						?>
+						</select>
+						<label>Ubicación</label>
+						<input type="text" class="form-control input-sm" id="ubicacion" name="txt-ubicacion">
+						<label>URL</label>
+						<input type="text" class="form-control input-sm" id="url" name="txt-url">
+						<label>Estado</label>
+						<input type="text" class="form-control input-sm" id="estado" name="txt-estado">
 					</form>
 				</div>
 				<div class="modal-footer">

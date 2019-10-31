@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-	<title>CONSULTA DE OFERTA DE LIBROS</title>
+	<title>Consulta MCA</title>
 	<meta charset="utf-8">
 	<link href="../../css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../css/estilos.css" rel="stylesheet">
@@ -39,7 +39,7 @@
 	</nav>
 </div>
 	<br>
-	<h3 align="center"> CONSULTA DE LIBROS </h3>
+	<h3 align="center"> CONSULTA DE LIBROS MCA</h3>
 	<br>
 
 	<div class="container">
@@ -62,6 +62,6 @@
 </html>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('#tableDataTable').load('../elements/tabla5.php');
+		$('#tableDataTable').load('../elements/tabla-libros-mca.php');
 	});
 </script>

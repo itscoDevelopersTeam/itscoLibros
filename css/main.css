@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 
 body { 
-	background-color: #1abc9c;
+	background-color: #212159;
 	font-family: "Arial";
 	margin: 0px;
 
@@ -14,7 +14,7 @@ body {
 
 header { 
 	padding: 30px;
-	background-color: #1abc9c;
+	background-color: #212159;
 }
 
 h3 { margin: 0px; }
@@ -84,7 +84,7 @@ form .login-header {
 	font-weight: bold;
 
 	color: #fff;
-	background-color: #1abc9c;
+	background-color: #212159;
 
 	border: none;
 	border-radius: 3px;
