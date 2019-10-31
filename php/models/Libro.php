@@ -6,10 +6,10 @@ class Libro {
 	public $anio;
 	public $programa;
 	public $ubicacion;
+	public $URL;
 	public $estado;
 	public $id_autor;
 	public $id_editorial;
-	
 	public $stock;
 	public $numero_paginas;
 	
@@ -18,6 +18,7 @@ class Libro {
 	function set_tipo($tipo) { $this->tipo = $tipo; }
 	function set_anio($anio) { $this->anio = $anio; }
 	function set_programa($programa) { $this->programa = $programa; }
+	function set_url($url) { $this->URL = $url; }
 	function set_ubicacion($ubicacion) { $this->ubicacion = $ubicacion; }
 	function set_estado($estado) { $this->estado = $estado; }
 	function set_id_autor($idAutor) { $this->id_autor = $idAutor; }
@@ -32,6 +33,7 @@ class Libro {
 	function get_tipo() { return $this->tipo; }
 	function get_anio() { return $this->anio; }
 	function get_programa() { return $this->programa; }
+	function get_url() { return $this->URL; }
 	function get_ubicacion() { return $this->ubicacion; }
 	function get_estado() { return $this->estado; }
 	function get_id_autor() { return $this->id_autor; }

@@ -4,7 +4,6 @@ include("../controllers/busqueda.php");
 
 $crudLibro = new busqueda();
 $libros = $crudLibro->select_mca();
-// echo $libros;
 ?>
 <div>
 	<table class="table table-hover table-condensed" id="idDataTable">
@@ -17,8 +16,9 @@ $libros = $crudLibro->select_mca();
 				<td> Programa </td>
 				<td> Autor </td>		
 				<td> Editorial </td>		
+				<td> url </td>
 				<td> ubicación </td>
-				<td> estado </td>
+				<!-- <td> estado </td> -->
 			</tr>
 		</thead>
 		<tbody>
@@ -31,8 +31,8 @@ $libros = $crudLibro->select_mca();
 				<td><?php echo $libro->get_programa(); ?></td>
 				<td><?php echo $libro->get_id_autor(); ?></td>
 				<td><?php echo $libro->get_id_editorial(); ?></td>
+				<td><a href="<?php echo $libro->get_url(); ?>"><?php echo $libro->get_url(); ?></a></td>
 				<td><?php echo $libro->get_ubicacion(); ?></td>
-				<td><?php echo $libro->get_estado(); ?></td>
 			</tr>
 			<?php } ?>	<!-- Cierre del ciclo que muestra los registros -->
 		</tbody>
